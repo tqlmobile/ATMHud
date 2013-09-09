@@ -236,7 +236,13 @@
 #pragma mark -
 #pragma mark Controlling
 - (void)show {
-	[__view show];
+	if (self.isVisible) {
+        [__view update];
+    }
+    else {
+        [__view show];
+        self.isVisible = YES;
+    }
 }
 
 - (void)update {
@@ -245,6 +251,7 @@
 
 - (void)hide {
 	[__view hide];
+    self.isVisible = NO;
 }
 
 - (void)hideAfter:(NSTimeInterval)delay {

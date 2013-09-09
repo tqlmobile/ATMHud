@@ -79,6 +79,8 @@ typedef enum {
 @property (nonatomic, retain) NSMutableArray *displayQueue;
 @property (nonatomic, assign) NSInteger queuePosition;
 
+@property (nonatomic,assign) BOOL isVisible;
+
 + (NSString *)buildInfo;
 
 - (id)initWithDelegate:(id)hudDelegate;
